@@ -1,0 +1,190 @@
+$white: #fff;
+$black: #262626;
+
+@mixin section-style($bg, $height) {
+    background-color: $bg;
+    height: $height;
+    border-radius: 80px;
+}
+
+@mixin infographic($width, $height, $padding) {
+    width: $width;
+    height: $height;
+    padding: $padding;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: $white;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Unbounded', cursive;
+}
+
+.main, .advantages, .plan, .teacher, .results, .footer {
+    overflow: auto
+}
+
+.main {
+    @include section-style(#2BD999, 900px);
+    color: $white;
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        top: 60px;
+        left: calc(50% - (766px/2));
+        width: 766px;
+        height: 510px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        margin: 70px auto 0; 
+        width: 1110px;
+        z-index: 1;
+        position: relative;
+
+        &__details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 106px;
+
+            &--text {
+                font-size: 18px;
+                width: 546px;
+                line-height: 25.2px;
+            }
+
+            &__time, &__form {
+
+                &--head {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 22.4px;
+                }
+
+                &--value {
+                    font-family: 'Unbounded', cursive;
+                    margin-top: 10px;
+                }
+            }
+
+            &__time {
+
+                &--value {
+                    font-size: 32px;
+                    line-height: 38.4px;
+                }
+            }
+
+                &__form {
+                    width: 264px;
+
+                    &--value {
+                        font-size: 20px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            &--subtitle {
+                font-size: 21px;
+                text-align: center;
+                line-height: 29.4px;
+            }
+
+            &--title {
+                font-size: 96px;
+                text-align: center;
+                line-height: 115.2px;
+                margin-top: 20px;
+            }
+            
+            &--btn-scroll {
+                margin: 56px auto 0;
+                width: 60px;
+                height: 60px;
+            }   
+    }
+}
+.advantages {
+    @include section-style(#B7AEF2, 855px);
+    color: $black;
+    display: flex;
+    justify-content: center;
+
+    &__info {
+        margin-top: 80px;
+
+        &--title {
+            font-size: 48px;
+            line-height: 57.6px;
+            text-transform: uppercase;
+        }
+
+        &__infographics {
+            display: flex;
+            width: 1111px;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            &__item {
+                position: relative;
+
+                &--first {
+                    top: 60px;
+                }
+
+                &--third {
+                    bottom: 56px;
+                }
+
+                &--text, &__image-block {
+                    background: $white;
+                    border-radius: 50px;
+                }
+    
+                &--text {
+                    @include infographic(363px, 205px, 40px 30px);
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 25.2px;
+                    display: flex;
+                    align-items: center;
+                }
+    
+                &__image-block {
+                    @include infographic(363px, 314px, 40px 30px);
+    
+                    &--image {
+                        width: 300px;
+                        height: 214px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+.plan {
+    @include section-style(#F2EEEB, 1166px);
+}
+.teacher {
+    @include section-style(#F2B3D6, 610px);
+}
+.results {
+    @include section-style(#2BD999, 1201px);
+}
+.footer {
+    @include section-style(#F2EEEB, 284px);
+}
