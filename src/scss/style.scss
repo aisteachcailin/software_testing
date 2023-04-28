@@ -25,12 +25,23 @@ body {
     background-color: $white;
 }
 
+.container {
+    margin: 0 auto;
+}
+
 h1, h2, h3, h4 {
     font-family: 'Unbounded', cursive;
 }
 
+.title {
+    font-size: 48px;
+    line-height: 57.6px;
+    text-transform: uppercase;
+}
+
 .main, .advantages, .plan, .teacher, .results, .footer {
-    overflow: auto
+    overflow: auto;
+    margin-top: 10px;
 }
 
 .main {
@@ -50,7 +61,6 @@ h1, h2, h3, h4 {
         display: flex;
         flex-direction: column;
         margin: 70px auto 0; 
-        width: 1110px;
         z-index: 1;
         position: relative;
 
@@ -129,7 +139,6 @@ h1, h2, h3, h4 {
         &--title {
             font-size: 48px;
             line-height: 57.6px;
-            text-transform: uppercase;
         }
 
         &__infographics {
@@ -178,6 +187,48 @@ h1, h2, h3, h4 {
 }
 .plan {
     @include section-style(#F2EEEB, 1166px);
+
+    &__title {
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    &__table {
+        margin: 40px auto 0;
+
+        &__item {
+            display: flex;
+            margin: 30px 0;
+
+            &__subject {
+                padding: 0 18px;
+
+                &--desc {
+                    margin-top: 10px;
+                    font-size: 18px;
+                    line-height: 25.2px;
+                }
+
+                &--name {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+
+            &--module {
+                font-size: 16px;
+                line-height: 19.2px;
+                min-width: 170px;
+            }
+
+            &--hours {
+                font-size: 20px;
+                text-align: end;
+                line-height: 24px;
+                min-width: 76px;
+            }
+        }
+    }
 }
 .teacher {
     @include section-style(#F2B3D6, 610px);
@@ -187,4 +238,10 @@ h1, h2, h3, h4 {
 }
 .footer {
     @include section-style(#F2EEEB, 284px);
+}
+
+@media only screen and (min-width : 1280px) {
+    .container {
+        width: 1110px;
+    }
 }
