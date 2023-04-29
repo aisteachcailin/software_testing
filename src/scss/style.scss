@@ -1,17 +1,23 @@
 $white: #fff;
 $black: #262626;
+$dark-green: #238C6E;
 
-@mixin section-style($bg, $height) {
+@mixin section-style($bg, $height, $color) {
     background-color: $bg;
     height: $height;
     border-radius: 80px;
+    color: $color;
 }
 
 @mixin infographic($width, $height, $padding) {
     width: $width;
     height: $height;
     padding: $padding;
-} 
+}
+
+@mixin mt {
+    margin-top: 80px;
+}
 
 * {
     margin: 0;
@@ -33,20 +39,27 @@ h1, h2, h3, h4 {
     font-family: 'Unbounded', cursive;
 }
 
+a {
+    text-decoration: none;
+    color: $black;
+}
+
 .title {
     font-size: 48px;
     line-height: 57.6px;
+}
+
+.text-upper {
     text-transform: uppercase;
 }
 
 .main, .advantages, .plan, .teacher, .results, .footer {
     overflow: auto;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .main {
-    @include section-style(#2BD999, 900px);
-    color: $white;
+    @include section-style(#2BD999, 900px, $white);
     position: relative;
 
     &__bg {
@@ -128,13 +141,12 @@ h1, h2, h3, h4 {
     }
 }
 .advantages {
-    @include section-style(#B7AEF2, 855px);
-    color: $black;
+    @include section-style(#B7AEF2, 855px, $black);
     display: flex;
     justify-content: center;
 
     &__info {
-        margin-top: 80px;
+        @include mt;
 
         &--title {
             font-size: 48px;
@@ -173,11 +185,13 @@ h1, h2, h3, h4 {
                 }
     
                 &__image-block {
-                    @include infographic(363px, 314px, 40px 30px);
+                    @include infographic(363px, 314px, 50px 31.5px);
+                    position: relative;
+                    bottom: 1px;
     
                     &--image {
                         width: 300px;
-                        height: 214px;
+                        height: 215px;
                     }
                 }
             }
@@ -186,10 +200,10 @@ h1, h2, h3, h4 {
     }
 }
 .plan {
-    @include section-style(#F2EEEB, 1166px);
+    @include section-style(#F2EEEB, 1166px, $black);
 
     &__title {
-        margin-top: 80px;
+        @include mt;
         text-align: center;
     }
 
@@ -198,7 +212,8 @@ h1, h2, h3, h4 {
 
         &__item {
             display: flex;
-            margin: 30px 0;
+            padding: 30px 0;
+            border-bottom: 1px solid $black;
 
             &__subject {
                 padding: 0 18px;
@@ -227,17 +242,145 @@ h1, h2, h3, h4 {
                 line-height: 24px;
                 min-width: 76px;
             }
+
+            &__final-exam {
+                border: none;
+            }
         }
     }
 }
 .teacher {
-    @include section-style(#F2B3D6, 610px);
+    @include section-style(#F2B3D6, 610px, $black);
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+
+            &--photo {
+                @include mt;
+            }
+
+            &__text {
+                margin-top: 120px;
+                width: 546px;
+                
+                &--post {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+
+                &--name {
+                    margin-top: 20px;
+                    font-size: 40px;
+                    line-height: 48px;
+                }
+
+                &__list {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 18px;
+                    line-height: 25.2px;
+
+                    &--item {
+                        padding-top: 20px;
+
+                        &::before {
+                            content: url(images/arrow.svg);
+                            padding-right: 15px;
+                        }
+                    }
+                }
+            }
+    }
 }
 .results {
-    @include section-style(#2BD999, 1201px);
+    @include section-style(#2BD999, 1201px, $white);
+
+    &__title {
+        @include mt;
+        text-align: center;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .color {
+        color: $dark-green;
+    }
+
+    &__dropdowns {
+        color: $black;
+        margin-top: 30px;   
+
+        &__item {
+            padding: 28px 40px;
+            width: 1110px;
+            background: $white;
+            border-radius: 30px;
+            margin-top: 10px;
+
+            &__head {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &__list {
+                display: flex;
+                margin: 3px 0 12px;
+                font-size: 18px;
+                line-height: 25.2px;
+                
+                &__part {
+                    width: 50%;
+
+                    &--text {
+                        display: flex;
+                        align-items: flex-start;
+                        padding-top: 25px;
+
+                        &::before {
+                            content: url(images/marker.svg);
+                            padding: 3.5px 14px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 .footer {
-    @include section-style(#F2EEEB, 284px);
+    @include section-style(#F2EEEB, 284px, $black);
+
+    &__organization {
+        @include mt;
+        text-align: center;
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+
+        &__item {
+            display: block;
+            text-align: center;
+
+            &--head {
+                font-size: 16px;
+                line-height: 19.2px;
+            }
+
+            &--value {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 25.2px;
+                margin-top: 10px;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width : 1280px) {
