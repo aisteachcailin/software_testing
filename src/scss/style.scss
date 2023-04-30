@@ -320,18 +320,26 @@ a {
 }
 .results {
     @include section-style(#2BD999, 1201px, $white);
+    height: inherit;
 
     &__title {
         @include mt;
         text-align: center;
     }
 
+    // dropdown  
+
     .dropdown {
         display: none;
     }
 
-    .color {
+    .color-title {
         color: $dark-green;
+    }
+
+    .sign-change {
+        background-image: url("images/minus.svg");
+        height: 4px;
     }
 
     &__dropdowns {
@@ -349,6 +357,12 @@ a {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+                &--sign {
+                    background-image: url("images/plus.svg");
+                    width: 20px;
+                    height: 20px;
+                }
             }
 
             &__list {
@@ -373,6 +387,15 @@ a {
                 }
             }
         }
+    }
+
+    &__end {
+        margin: 40px auto 80px;
+        text-align: center;
+        line-height: 29.4px;
+        font-size: 21px;
+        height: 145px;
+        width: 734px;
     }
 }
 .footer {
