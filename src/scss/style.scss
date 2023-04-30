@@ -35,7 +35,7 @@ body {
     margin: 0 auto;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .header__list--number {
     font-family: 'Unbounded', cursive;
 }
 
@@ -58,13 +58,37 @@ a {
     margin: 10px;
 }
 
+.header {
+    height: 70px;
+    background: $white;
+    border-radius: 30px;
+    padding: 0 40px;
+    position: fixed;
+    top: 20px;
+    width: inherit;
+    z-index: 2;
+    display: flex;
+
+    &__list {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        color: $black;
+
+        a {
+            font-size: 18px;
+        }
+    }
+}
+
 .main {
     @include section-style(#2BD999, 900px, $white);
     position: relative;
 
     &__bg {
         position: absolute;
-        top: 60px;
+        top: 150px;
         left: calc(50% - (766px/2));
         width: 766px;
         height: 510px;
@@ -73,7 +97,7 @@ a {
     &__info {
         display: flex;
         flex-direction: column;
-        margin: 70px auto 0; 
+        margin: 160px auto 0; 
         z-index: 1;
         position: relative;
 
