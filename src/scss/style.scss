@@ -329,7 +329,7 @@ a {
                         display: flex;
 
                         &::before {
-                            content: url(images/arrow.svg);
+                            content: url('/images/arrow.svg');
                             padding-right: 15px;
                         }
                     }
@@ -357,7 +357,7 @@ a {
     }
 
     .sign-change {
-        background-image: url("images/minus.svg");
+        background-image: url('/images/minus.svg');
         height: 4px;
     }
 
@@ -378,7 +378,7 @@ a {
                 justify-content: space-between;
 
                 &--sign {
-                    background-image: url("images/plus.svg");
+                    background-image: url('/images/plus.svg');
                     width: 20px;
                     height: 20px;
                 }
@@ -399,7 +399,7 @@ a {
                         padding-top: 25px;
 
                         &::before {
-                            content: url(images/marker.svg);
+                            content: url('/images/marker.svg');
                             padding: 3.5px 14px 0 0;
                         }
                     }
