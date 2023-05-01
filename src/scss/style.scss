@@ -19,6 +19,13 @@ $dark-green: #238C6E;
     margin-top: 80px;
 }
 
+@mixin adapt-header($height, $radius, $padding, $top) {
+    height: $height;
+    border-radius: $radius;
+    padding: $padding;
+    top: $top;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,12 +66,9 @@ a {
 }
 
 .header {
-    height: 70px;
+    @include adapt-header(70px, 30px, 0 40px, 20px);
     background: $white;
-    border-radius: 30px;
-    padding: 0 40px;
     position: fixed;
-    top: 20px;
     width: inherit;
     z-index: 2;
     display: flex;
@@ -84,70 +88,31 @@ a {
 
 .main {
     @include section-style(#2BD999, 900px, $white);
-    position: relative;
-
-    &__bg {
-        position: absolute;
-        top: 150px;
-        left: calc(50% - (766px/2));
-        width: 766px;
-        height: 510px;
-    }
 
     &__info {
         display: flex;
         flex-direction: column;
         margin: 160px auto 0; 
-        z-index: 1;
-        position: relative;
 
-        &__details {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 106px;
+        &__text {
+            position: relative;
+            padding-bottom: 115px;
 
-            &--text {
-                font-size: 18px;
-                width: 546px;
-                line-height: 25.2px;
-            }
-
-            &__time, &__form {
-
-                &--head {
-                    font-size: 16px;
-                    font-weight: 500;
-                    line-height: 22.4px;
-                }
-
-                &--value {
-                    font-family: 'Unbounded', cursive;
-                    margin-top: 10px;
-                }
-            }
-
-            &__time {
-
-                &--value {
-                    font-size: 32px;
-                    line-height: 38.4px;
-                }
-            }
-
-                &__form {
-                    width: 264px;
-
-                    &--value {
-                        font-size: 20px;
-                        line-height: 24px;
-                    }
-                }
+            &__bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                opacity: 0.8;
+                filter: blur(2.5px);
             }
 
             &--subtitle {
                 font-size: 21px;
                 text-align: center;
                 line-height: 29.4px;
+                position: relative;
+                z-index: 1;
             }
 
             &--title {
@@ -155,12 +120,66 @@ a {
                 text-align: center;
                 line-height: 115.2px;
                 margin-top: 20px;
+                position: relative;
+                z-index: 1;
             }
+        }
+
+        &__details {
+            display: flex;
+            justify-content: space-between;
+
+            &--text {
+                font-size: 18px;
+                width: 546px;
+                line-height: 25.2px;
+            }
+
+            &__conditions {
+                display: flex;
+                width: 452px;
+                justify-content: space-between;
+
+                &__time, &__form {
+
+                    &--head {
+                        font-size: 16px;
+                        font-weight: 500;
+                        line-height: 22.4px;
+                    }
+    
+                    &--value {
+                        font-family: 'Unbounded', cursive;
+                        margin-top: 10px;
+                    }
+                }
+    
+                &__time {
+    
+                    &--value {
+                        font-size: 32px;
+                        line-height: 38.4px;
+                    }
+                }
+    
+                    &__form {
+                        width: 264px;
+    
+                        &--value {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+            }
+        }
             
             &--btn-scroll {
                 margin: 56px auto 0;
-                width: 60px;
-                height: 60px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
             }   
     }
 }
@@ -430,8 +449,223 @@ a {
     }
 }
 
-@media only screen and (min-width : 1280px) {
+/*--------------------------------media queries--------------------------------*/
+
+@media only screen and (min-width : 1281px) {
     .container {
         width: 1110px;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1280px) {
+    .container {
+        margin: 0 10px;
+        max-width: 1280px;
+    }
+
+    .main, .advantages, .plan, .teacher, .results, .footer {
+        border-radius: 30px;
+    }
+
+    .header {
+        @include adapt-header(60px, 20px, 0 20px, 20px);
+        width: calc(100% - 40px);
+        &__list {
+
+            &--link {
+                display: none;
+            }
+
+            &--organization {
+                font-size: 20px;
+            }
+
+            &--number {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .main {
+        height: 829px;
+
+        &__info {
+
+            &__text {
+                padding-bottom: 75px;
+
+                &--subtitle {
+                    font-size: 18px;
+                    line-height: 25.2px;
+                    padding-top: 40px;
+                }
+    
+                &--title {
+                    font-size: 62px;
+                    line-height: 74.4px;
+                }
+            }
+
+            &__details {
+                justify-content: space-evenly;
+
+                &--text {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    width: 294px;
+                }
+
+                &__conditions {
+                    flex-direction: column;
+                    width: 232px;
+
+                    &__time {
+
+                        &--value {
+                            font-size: 20px;
+                        }
+                    }
+
+                    &__form {
+                        width: auto;
+                        &--value {
+                            font-size: 16px;
+                        }
+                    }
+
+                    &__time, &__form {
+
+                        &--head {
+                            font-size: 14px;
+                            line-height: 19.6px;
+                        }
+                    }
+                }
+            }
+
+            &--btn-scroll {
+                margin: 54px auto 0;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+
+        }
+    }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 767px) {
+    .container {
+        margin: 0 12px;
+        max-width: 767px;
+    }
+
+    .main, .advantages, .plan, .teacher, .results, .footer {
+        border-radius: 20px;
+    }
+
+    .main, .advantages, .plan, .teacher, .results {
+        margin: 0 0 4px;
+    }
+
+    .header {
+        @include adapt-header(50px, 16px, 0 16px, 10px);
+        width: calc(100% - 26px);
+
+        &__list {
+
+            &--link {
+                display: none;
+            }
+
+            &--organization {
+                font-size: 14px;
+            }
+
+            &--number, a {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .main {
+        height: 588px;
+
+        &__info {
+            margin: 110px auto 0;
+
+            &__text {
+                padding-bottom: 36px;
+
+                &--subtitle {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    padding-top: 10px;
+                }
+    
+                &--title {
+                    font-size: 25px;
+                    line-height: 30px;
+                    margin-top: 10px;
+                }
+            }
+
+            &__details {
+                flex-direction: column;
+
+                &--text {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    width: 100%;
+                }
+
+                &__conditions {
+                    flex-direction: row;
+                    width: 100%;
+                    margin-top: 20px;
+
+                    &__time {
+
+                        &--value {
+                            font-size: 16px;
+                            line-height: 19.2px;
+                        }
+                    }
+
+                    &__form {
+                        width: auto;
+
+                        &--value {
+                            font-size: 14px;
+                            line-height: 16.8px;
+                        }
+                    }
+
+                    &__time, &__form {
+
+                        &--head {
+                            font-size: 12px;
+                            line-height: 16.8px;
+                        }
+
+                        &--value {
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+
+            &--btn-scroll {
+                margin: 40px auto 0;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+        }
     }
 }
