@@ -259,7 +259,6 @@ a {
             border-bottom: 1px solid $black;
 
             &__subject {
-                padding: 0 18px;
 
                 &--desc {
                     margin-top: 10px;
@@ -430,6 +429,10 @@ a {
         justify-content: space-between;
         margin-top: 40px;
 
+        &__part {
+            display: contents;
+        }
+
         &__item {
             display: block;
             text-align: center;
@@ -457,9 +460,15 @@ a {
     }
 }
 
+@media only screen and (min-width : 768px) {
+    .plan__table__item__subject__mobile {
+        display: none;
+    }
+}
+
 @media only screen and (min-width : 768px) and (max-width : 1280px) {
     .container {
-        margin: 0 10px;
+        margin: 0 12px;
         max-width: 1280px;
     }
 
@@ -469,7 +478,7 @@ a {
 
     .header {
         @include adapt-header(60px, 20px, 0 20px, 20px);
-        width: calc(100% - 40px);
+        width: calc(100% - 42px);
         &__list {
 
             &--link {
@@ -485,6 +494,8 @@ a {
             }
         }
     }
+
+    /*main tablet*/
 
     .main {
         height: 829px;
@@ -554,6 +565,30 @@ a {
 
         }
     }
+
+        /*plan tablet*/
+
+        .plan {
+
+        }
+    
+        /*teacher tablet*/
+    
+        .teacher {
+    
+        }
+    
+        /*results tablet*/
+    
+        .results {
+    
+        }
+    
+        /*footer tablet*/
+    
+        .footer {
+    
+        }
 }
 
 @media only screen and (min-width : 320px) and (max-width : 767px) {
@@ -589,6 +624,8 @@ a {
             }
         }
     }
+
+    /*main mobile*/
 
     .main {
         height: 588px;
@@ -666,6 +703,263 @@ a {
                 }
             }
 
+        }
+    }
+
+    /*advantages mobile*/
+
+    .advantages {
+        height: 844px;
+
+        &__info {
+            margin-top: 40px;
+            text-align: center;
+
+            &--title {
+                font-size: 28px;
+                line-height: 33.6px;
+            }
+    
+            &__infographics {
+                flex-direction: column;
+                width: auto;
+                margin-top: 12px;
+
+                &__item {
+                    margin: 8px 0 0;
+                    background-color: #ffffff;
+                    border-radius: 30px;
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: center;
+    
+                    &--first, &--third {
+                        position: static;
+                    }
+    
+                    &__image-block {
+                        position: static;
+                        width: inherit;
+                        padding: 16px 0 0;
+                                
+                        &--image {
+                            width: 140px;
+                            height: 100px;
+                        }
+                    }
+    
+                    &--text {
+                        font-size: 14px;
+                        line-height: 19.6px;
+                        text-align: center;
+                        width: auto;
+                        height: auto;
+                        padding: 8px 16px 16px;
+                    }
+    
+                    &__image-block, &--text {
+                        height: 50%;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    /*plan mobile*/
+
+    .plan {
+        height: 1216px;
+
+        &__title {
+            font-size: 28px;
+            line-height: 33.6px;
+            margin-top: 40px;
+        }
+
+        &__table {
+            margin: 21.5px auto 0;
+
+            &__item {
+                padding: 16px 0;
+
+                &--module {
+                    line-height: 16.8px;
+                    font-size: 12px;
+                }
+
+                &--hours {
+                    line-height: 19.6px;
+                    font-size: 14px;
+                }
+
+                &__subject {
+
+                    &--name, &--desc {
+                        line-height: 19.6px;
+                        font-size: 14px;
+                        margin-top: 6px;
+                    }
+
+                    &--name {
+                        margin-top: 9.5px;
+                    }
+
+                    &__mobile {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                    }
+                }
+            }
+
+            .module, .hours, .name {
+                display: none;
+            }
+        }
+    }
+
+    /*teacher mobile*/
+
+    .teacher {
+        height: 645px;
+
+        &__info {
+            flex-direction: column;
+
+            &--photo {
+                margin: 40px auto 0;
+                width: 220px;
+                height: 248px;
+            }
+
+            &__text {
+                margin-top: 20px;
+                width: auto;
+
+                &--post {
+                    line-height: 19.6px;
+                    font-size: 14px;
+                }
+
+                &--name {
+                    line-height: 33.6px;
+                    font-size: 24px;
+                    margin-top: 5px;
+                }
+
+                &__list {
+                    line-height: 19.6px;
+                    font-size: 14px;
+                    margin-top: 8px;
+
+                    &--item {
+                        padding-top: 12px;  
+                        &::before {
+                            padding-right: 10.4px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    /*results mobile*/
+
+    .results {
+        margin-top: 12px;
+
+        &__title {
+            line-height: 33.6px;
+            font-size: 28px;
+            margin-top: 40px;
+        }
+
+            &__dropdowns__item {
+                margin-top: 8px;
+                padding: 20px 16px;
+                border-radius: 16px;
+                width: auto;
+
+                &__head {
+
+                    &--title {
+                        line-height: 19.6px;
+                        font-size: 14px;
+                    }
+                }
+
+                &__list {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    margin: 0;
+                    flex-direction: column;
+
+                    &__part {
+                        width: 100%;
+
+                        &--text {
+                            padding-top: 20px;
+                            &::before {
+                                padding-right: 9.43px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        &__end {
+            line-height: 19.6px;
+            font-size: 14px;
+            margin: 20px auto 40px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /*footer mobile*/
+
+    .footer {
+        height: 325px;
+
+        &__organization {
+            font-size: 20px;
+            line-height: 24.8px;
+            margin-top: 40px;
+        }
+
+        &__data {
+            margin-top: 20px;
+            display: block;
+            
+            .inn-kpp {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .tel-address {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+                height: 134px;
+                justify-content: space-between;
+            }
+
+            &__item {
+
+                &--head {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                }
+
+                &--value {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    margin-top: 4px;
+                }
+            }
         }
     }
 }
