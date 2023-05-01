@@ -326,6 +326,7 @@ a {
 
                     &--item {
                         padding-top: 20px;
+                        display: flex;
 
                         &::before {
                             content: url(images/arrow.svg);
@@ -428,10 +429,6 @@ a {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
-
-        &__part {
-            display: contents;
-        }
 
         &__item {
             display: block;
@@ -565,30 +562,244 @@ a {
 
         }
     }
+    
+    /*advantages*/
 
-        /*plan tablet*/
+    .advantages {
+        height: 692px;
 
-        .plan {
+        &__info {
+            margin-top: 60px;
 
+            &--title {
+                font-size: 40px;
+                line-height: 48px;
+            }
+
+            &__infographics {
+                width: 728px;
+
+                &__item {
+
+                    &--text {
+                        font-size: 16px;
+                        line-height: 22.4px;
+                        padding: 30px 20px;
+                        width: 238px;
+                        height: 214px;
+                    }
+
+                    &__image-block {
+                        padding: 30px 19px;
+                        width: 238px;
+                        height: 202px;
+
+                        &--image {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    &--second {
+                        top: 20px;
+                    }
+
+                    &--third {
+                        bottom: 54px;
+                    }
+                }
+            }
         }
-    
-        /*teacher tablet*/
-    
-        .teacher {
-    
+    }
+
+    /*plan tablet*/
+
+    .plan {
+        height: 969px;
+
+        &__title {
+            font-size: 40px;
+            line-height: 48px;
+            margin-top: 60px;
         }
+
+        &__table {
+            
+            &__item {
+                padding: 20px 0;
+
+                &--module {
+                    font-size: 14px;
+                    line-height: 19.6px;
+                    min-width: 108px;
+                }
+
+                &__subject {
+
+                    &--desc, &--name {
+                        font-size: 16px;
+                    }
+
+                    &--name {
+                        line-height: 19.2px;
+                    }
     
-        /*results tablet*/
-    
-        .results {
-    
+                    &--desc {
+                        line-height: 22.4px;
+                        margin-top: 6px;
+                    }
+                }
+
+                &--hours {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                }
+
+            }
         }
-    
-        /*footer tablet*/
-    
-        .footer {
-    
+    }
+
+    /*teacher tablet*/
+
+    .teacher {
+        height: 437px;
+
+        &__info {
+
+            &--photo {
+                margin: 61px auto 0;
+                width: 280px;
+                height: 315px;
+            }
+
+            &__text {
+                margin-top: 60px;
+                width: auto;
+                padding-left: 30px;
+
+                &--post {
+                    line-height: 19.2px;
+                    font-size: 16px;
+                }
+
+                &--name {
+                    line-height: 38.4px;
+                    font-size: 32px;
+                    margin-top: 10px;
+                }
+
+                &__list {
+                    line-height: 22.4px;
+                    font-size: 16px;
+                    margin-top: 20px;
+
+                    &--item {
+                        padding-top: 20px;  
+                        &::before {
+                            padding-right: 18.57px;
+                        }
+                    }
+                }
+            }
         }
+}
+
+    /*results tablet*/
+
+    .results {
+
+        &__title {
+            line-height: 48px;
+            font-size: 40px;
+            margin-top: 60px;
+        }
+         &__dropdowns {
+            margin-top: 32px;
+
+            &__item {
+                margin-top: 8px;
+                padding: 23px 20px;
+                border-radius: 20px;
+                width: auto;
+
+                &__head {
+
+                    &--title {
+                        line-height: 19.2px;
+                        font-size: 16px;
+                    }
+                }
+
+                &__list {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    margin: 0;
+
+                    &__part {
+                        width: 50%;
+
+                        &--text {
+                            padding-top: 20px;
+                            &::before {
+                                padding-right: 13.71px;
+                            }
+                        }
+                    }
+                }
+            }
+         }
+
+        &__end {
+            line-height: 25.2px;
+            font-size: 18px;
+            margin: 40px auto 60px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /*footer tablet*/
+
+    .footer {
+        height: 319px;
+
+        &__organization {
+            font-size: 20px;
+            line-height: 24.8px;
+            margin-top: 60px;
+        }
+
+        &__data {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .tel-address {
+                width: 604px;
+            }
+
+            &__item {
+                width: 33.3%;
+
+                &--head {
+                    font-size: 14px;
+                    line-height: 16.8px;
+                }
+
+                &--value {
+                    font-size: 16px;
+                    line-height: 22.4px;
+                    margin-top: 8px;
+                }
+            }
+        }
+
+        .footer-address {
+            width: max-content;
+            margin-top: 40px;
+        }
+    }
 }
 
 @media only screen and (min-width : 320px) and (max-width : 767px) {
@@ -869,7 +1080,6 @@ a {
     /*results mobile*/
 
     .results {
-        margin-top: 12px;
 
         &__title {
             line-height: 33.6px;
@@ -877,7 +1087,10 @@ a {
             margin-top: 40px;
         }
 
-            &__dropdowns__item {
+        &__dropdowns {
+            margin-top: 12px;
+
+            &__item {
                 margin-top: 8px;
                 padding: 20px 16px;
                 border-radius: 16px;
@@ -909,6 +1122,7 @@ a {
                     }
                 }
             }
+        }
 
         &__end {
             line-height: 19.6px;
@@ -932,22 +1146,12 @@ a {
 
         &__data {
             margin-top: 20px;
-            display: block;
-            
-            .inn-kpp {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .tel-address {
-                display: flex;
-                flex-direction: column;
-                margin-top: 20px;
-                height: 134px;
-                justify-content: space-between;
-            }
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
 
             &__item {
+                width: 50%;
 
                 &--head {
                     font-size: 14px;
@@ -959,6 +1163,11 @@ a {
                     line-height: 22.4px;
                     margin-top: 4px;
                 }
+            }
+
+            .footer-tel {
+                width: 100%;
+                margin: 20px 0;
             }
         }
     }
