@@ -357,7 +357,7 @@ a {
     }
 
     .sign-change {
-        background-image: url('/images/minus.svg');
+        background: $dark-green;
         height: 4px;
     }
 
@@ -378,7 +378,7 @@ a {
                 justify-content: space-between;
 
                 &--sign {
-                    background-image: url('/images/plus.svg');
+                    background: linear-gradient(to bottom, transparent 38%, $black 38%, $black 62%, transparent 62%), linear-gradient(to right, transparent 38%, $black 38%, $black 62%, transparent 62%);
                     width: 20px;
                     height: 20px;
                 }
@@ -727,6 +727,11 @@ a {
                     &--title {
                         line-height: 19.2px;
                         font-size: 16px;
+                    }
+
+                    &--sign {
+                        width: 17.14px;
+                        height: 17.14px;
                     }
                 }
 
@@ -1101,6 +1106,11 @@ a {
                     &--title {
                         line-height: 19.6px;
                         font-size: 14px;
+                    }
+
+                    &--sign {
+                        width: 14.29px;
+                        height: 14.29px;
                     }
                 }
 
