@@ -34,6 +34,10 @@ $dark-green: #238C6E;
     font-weight: 400;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     background-color: $white;
 }
@@ -376,6 +380,7 @@ a {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                cursor: pointer !important;
 
                 &--sign {
                     background: linear-gradient(to bottom, transparent 38%, $black 38%, $black 62%, transparent 62%), linear-gradient(to right, transparent 38%, $black 38%, $black 62%, transparent 62%);
