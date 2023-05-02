@@ -401,6 +401,10 @@ a {
                 &__part {
                     width: 50%;
 
+                    &__first {
+                        padding-right: 20px;
+                    }
+
                     &--text {
                         display: flex;
                         align-items: flex-start;
@@ -765,6 +769,10 @@ a {
 
                     &__part {
                         width: 50%;
+
+                        &__first {
+                            padding-right: 20px;
+                        }
 
                         &--text {
                             padding-top: 20px;
