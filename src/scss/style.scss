@@ -36,6 +36,7 @@ $dark-green: #238C6E;
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
 
 body {
@@ -46,7 +47,7 @@ body {
     margin: 0 auto;
 }
 
-h1, h2, h3, h4, .header__list--number {
+h1, h2, h3, h4, .header__list--number, .footer__organization a {
     font-family: 'Unbounded', cursive;
 }
 
@@ -70,12 +71,13 @@ a {
 }
 
 .header {
-    @include adapt-header(70px, 30px, 0 40px, 20px);
+    @include adapt-header(70px, 30px, 0 40px, 30px);
     background: $white;
     position: fixed;
     width: inherit;
     z-index: 2;
     display: flex;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
 
     &__list {
         display: flex;
@@ -100,7 +102,7 @@ a {
 
         &__text {
             position: relative;
-            padding-bottom: 115px;
+            padding-bottom: 106px;
 
             &__bg {
                 position: absolute;
@@ -210,7 +212,7 @@ a {
                 position: relative;
 
                 &--first {
-                    top: 60px;
+                    margin: 60px 0;
                 }
 
                 &--third {
@@ -346,8 +348,9 @@ a {
     height: inherit;
 
     &__title {
-        @include mt;
         text-align: center;
+        width: 80%;
+        margin: 80px auto 0;
     }
 
     // dropdown  
@@ -367,7 +370,7 @@ a {
 
     &__dropdowns {
         color: $black;
-        margin-top: 30px;   
+        margin-top: 40px;   
 
         &__item {
             padding: 28px 40px;
@@ -375,12 +378,12 @@ a {
             background: $white;
             border-radius: 30px;
             margin-top: 10px;
+            cursor: pointer;
 
             &__head {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                cursor: pointer !important;
 
                 &--sign {
                     background: linear-gradient(to bottom, transparent 38%, $black 38%, $black 62%, transparent 62%), linear-gradient(to right, transparent 38%, $black 38%, $black 62%, transparent 62%);
@@ -420,6 +423,7 @@ a {
         font-size: 21px;
         height: 145px;
         width: 734px;
+        font-weight: 500;
     }
 }
 .footer {
@@ -468,7 +472,22 @@ a {
     }
 }
 
+@media only screen and (min-width : 320px) and (max-width : 1280px) {
+    .advantages, .plan {
+        height: auto;
+    }
+
+    .advantages__info__infographics__item {
+        height: fit-content;
+    }
+}
+
 @media only screen and (min-width : 768px) and (max-width : 1280px) {
+
+    html {
+        scroll-padding-top: 90px;
+    }
+
     .container {
         margin: 0 12px;
         max-width: 1280px;
@@ -479,7 +498,7 @@ a {
     }
 
     .header {
-        @include adapt-header(60px, 20px, 0 20px, 20px);
+        @include adapt-header(60px, 20px, 0 20px, 30px);
         width: calc(100% - 42px);
         &__list {
 
@@ -568,10 +587,9 @@ a {
         }
     }
     
-    /*advantages*/
+    /*advantages tablet*/
 
     .advantages {
-        height: 692px;
 
         &__info {
             margin-top: 60px;
@@ -620,7 +638,6 @@ a {
     /*plan tablet*/
 
     .plan {
-        height: 969px;
 
         &__title {
             font-size: 40px;
@@ -629,6 +646,7 @@ a {
         }
 
         &__table {
+            margin: 40px auto 60px;
             
             &__item {
                 padding: 20px 0;
@@ -773,7 +791,7 @@ a {
     .footer {
         height: 319px;
 
-        &__organization {
+        &__organization a {
             font-size: 20px;
             line-height: 24.8px;
             margin-top: 60px;
@@ -813,6 +831,11 @@ a {
 }
 
 @media only screen and (min-width : 320px) and (max-width : 767px) {
+
+    html {
+        scroll-padding-top: 60px;
+    }
+
     .container {
         margin: 0 12px;
         max-width: 767px;
@@ -930,10 +953,9 @@ a {
     /*advantages mobile*/
 
     .advantages {
-        height: 844px;
 
         &__info {
-            margin-top: 40px;
+            margin: 40px auto;
             text-align: center;
 
             &--title {
@@ -990,7 +1012,6 @@ a {
     /*plan mobile*/
 
     .plan {
-        height: 1216px;
 
         &__title {
             font-size: 28px;
@@ -999,7 +1020,7 @@ a {
         }
 
         &__table {
-            margin: 21.5px auto 0;
+            margin: 21.5px auto 40px;
 
             &__item {
                 padding: 16px 0;
@@ -1152,6 +1173,7 @@ a {
 
     .footer {
         height: 325px;
+        margin: 0;
 
         &__organization {
             font-size: 20px;
