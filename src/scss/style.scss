@@ -298,7 +298,8 @@ a {
     }
 }
 .teacher {
-    @include section-style(#F2B3D6, 610px, $black);
+    @include section-style(#F2B3D6, auto, $black);
+    padding-bottom: 80px;
 
     &__info {
         display: flex;
@@ -386,6 +387,10 @@ a {
                     width: 20px;
                     height: 20px;
                 }
+
+                &--title {
+                    font-size: 20px;
+                }
             }
 
             &__list {
@@ -463,6 +468,11 @@ a {
 @media only screen and (min-width : 1281px) {
     .container {
         width: 1110px;
+    }
+    .header__list a {
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -544,7 +554,7 @@ a {
                 &--text {
                     font-size: 16px;
                     line-height: 22.4px;
-                    width: 294px;
+                    width: 50%;
                 }
 
                 &__conditions {
@@ -560,6 +570,7 @@ a {
 
                     &__form {
                         width: auto;
+                        margin-top: 20px;
                         &--value {
                             font-size: 16px;
                         }
@@ -570,6 +581,10 @@ a {
                         &--head {
                             font-size: 14px;
                             line-height: 19.6px;
+                        }
+
+                        &--value {
+                            margin-top: 6px;
                         }
                     }
                 }
@@ -685,12 +700,12 @@ a {
     /*teacher tablet*/
 
     .teacher {
-        height: 437px;
+        padding-bottom: 61px;
 
         &__info {
 
             &--photo {
-                margin: 61px auto 0;
+                margin-top: 61px;
                 width: 280px;
                 height: 315px;
             }
@@ -795,10 +810,14 @@ a {
     .footer {
         height: 319px;
 
-        &__organization a {
+        &__organization {
+            margin-top: 60px;
+
+            a {
             font-size: 20px;
             line-height: 24.8px;
             margin-top: 60px;
+            }
         }
 
         &__data {
@@ -908,6 +927,7 @@ a {
 
                 &__conditions {
                     flex-direction: row;
+                    justify-content: space-around;
                     width: 100%;
                     margin-top: 20px;
 
@@ -1068,7 +1088,7 @@ a {
     /*teacher mobile*/
 
     .teacher {
-        height: 645px;
+        padding-bottom: 40px;
 
         &__info {
             flex-direction: column;
