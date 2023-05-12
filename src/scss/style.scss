@@ -353,20 +353,16 @@ a {
         margin: 80px auto 0;
     }
 
-    // dropdown  
-
-    .dropdown {
-        display: none;
-    }
-
     .color-title {
         color: $dark-green;
+        transition: 0.3s;
     }
 
     .sign-change {
         background: $dark-green;
         height: 4px;
     }
+
 
     &__dropdowns {
         color: $black;
