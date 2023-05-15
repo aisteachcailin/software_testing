@@ -4,5 +4,8 @@ export default {
     publicDir: '../public',
     build: {
         outDir: '../dist',
+    },
+    css: {
+        devSourceMap: true 
     }
 }
