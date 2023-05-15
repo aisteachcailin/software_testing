@@ -358,8 +358,6 @@ a {
         color: $black;
         margin-top: 40px;   
 
-
-
         &__item {
             padding: 28px 40px;
             width: 1110px;
@@ -368,48 +366,27 @@ a {
             margin-top: 10px;
             cursor: pointer;
 
-            &:nth-child(1) {
-            overflow: visible;
-            .results__dropdowns__item__list {
-                height: auto;
-                margin: 0;
-            }
-
-            .results__dropdowns__item__head--title {
-                color: $dark-green;
-            }
-        
-            .results__dropdowns__item__head--sign {
-                background: $dark-green;
-                height: 4px;
-            }
-
             &.is-open {
+                .results__dropdowns__item__list {
+                    margin: 3px 0 12px;
+                }
                 .results__dropdowns__item__head--title {
-                    color: $black;
+                    color: $dark-green;
                 }
             
                 .results__dropdowns__item__head--sign {
-                    background: linear-gradient(to bottom, transparent 38%, #262626 38%, #262626 62%, transparent 62%), linear-gradient(to right, transparent 38%, #262626 38%, #262626 62%, transparent 62%);
-                    width: 20px;
-                    height: 20px;
+                    background: $dark-green;
+                    height: 4px;
                 }
+            }    
+
+            &:nth-child(1) {
+            overflow: visible;
+            height: auto;
+            .results__dropdowns__item__list {
+                height: auto;
             }
         }
-
-        &.is-open:not(:nth-child(1)) {
-            .results__dropdowns__item__list {
-                margin: 0 3px 12px;
-            }
-            .results__dropdowns__item__head--title {
-                color: $dark-green;
-            }
-        
-            .results__dropdowns__item__head--sign {
-                background: $dark-green;
-                height: 4px;
-            }
-        }  
 
             &__head {
                 display: flex;
