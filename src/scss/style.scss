@@ -2,9 +2,8 @@ $white: #fff;
 $black: #262626;
 $dark-green: #238C6E;
 
-@mixin section-style($bg, $height, $color) {
+@mixin section-style($bg, $color) {
     background-color: $bg;
-    height: $height;
     border-radius: 80px;
     color: $color;
 }
@@ -93,7 +92,7 @@ a {
 }
 
 .main {
-    @include section-style(#2BD999, 900px, $white);
+    @include section-style(#2BD999, $white);
 
     &__info {
         display: flex;
@@ -180,7 +179,7 @@ a {
         }
             
             &--btn-scroll {
-                margin: 56px auto 0;
+                margin: 56px auto 20px;
 
                 img {
                     width: 60px;
@@ -190,7 +189,7 @@ a {
     }
 }
 .advantages {
-    @include section-style(#B7AEF2, 855px, $black);
+    @include section-style(#B7AEF2, $black);
     display: flex;
     justify-content: center;
 
@@ -249,7 +248,7 @@ a {
     }
 }
 .plan {
-    @include section-style(#F2EEEB, 1166px, $black);
+    @include section-style(#F2EEEB, $black);
 
     &__title {
         @include mt;
@@ -298,7 +297,7 @@ a {
     }
 }
 .teacher {
-    @include section-style(#F2B3D6, auto, $black);
+    @include section-style(#F2B3D6, $black);
     padding-bottom: 80px;
 
     &__info {
@@ -345,7 +344,7 @@ a {
     }
 }
 .results {
-    @include section-style(#2BD999, 1201px, $white);
+    @include section-style(#2BD999, $white);
     height: inherit;
 
     &__title {
@@ -446,7 +445,7 @@ a {
     }
 }
 .footer {
-    @include section-style(#F2EEEB, 284px, $black);
+    @include section-style(#F2EEEB, $black);
 
     &__organization {
         @include mt;
@@ -456,7 +455,7 @@ a {
     &__data {
         display: flex;
         justify-content: space-between;
-        margin-top: 40px;
+        margin: 40px auto 80px;
 
         &__item {
             display: block;
@@ -543,8 +542,6 @@ a {
     /*main tablet*/
 
     .main {
-        height: 829px;
-
         &__info {
 
             &__text {
@@ -605,7 +602,7 @@ a {
             }
 
             &--btn-scroll {
-                margin: 54px auto 0;
+                margin: 54px auto 20px;
 
                 img {
                     width: 50px;
@@ -822,7 +819,6 @@ a {
     /*footer tablet*/
 
     .footer {
-        height: 319px;
 
         &__organization {
             margin-top: 60px;
@@ -835,7 +831,7 @@ a {
         }
 
         &__data {
-            margin-top: 40px;
+            margin: 40px auto 60px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -909,8 +905,6 @@ a {
     /*main mobile*/
 
     .main {
-        height: 588px;
-
         &__info {
             margin: 110px auto 0;
 
@@ -977,7 +971,7 @@ a {
             }
 
             &--btn-scroll {
-                margin: 40px auto 0;
+                margin: 40px auto 20px;
 
                 img {
                     width: 40px;
@@ -1210,7 +1204,6 @@ a {
     /*footer mobile*/
 
     .footer {
-        height: 325px;
         margin: 0;
 
         &__organization {
@@ -1220,7 +1213,7 @@ a {
         }
 
         &__data {
-            margin-top: 20px;
+            margin: 20px auto 40px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
